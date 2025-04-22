@@ -1,0 +1,78 @@
+[build-system]
+requires = [
+    "setuptools>=61.0",
+    "wheel",
+    "build"
+    ]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spade_mcp"
+version = "0.1.0"
+description = "SPADE Agent to serve MCP using XMPP."
+readme = "README.rst"
+authors = [{name = "Javi Palanca"}]
+maintainers = [{name = "Javi Palanca"}]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Internet :: XMPP",
+    "Topic :: Artificial Intelligence :: Language Models",
+    "Topic :: Artificial Intelligence :: Agents",
+]
+license = {text = "MIT license"}
+keywords = [
+    "spade",
+    "mcp",
+    "xmpp",
+    "agent",
+    "chatbot",
+    "llm",
+    "language model",
+    "artificial intelligence"
+]
+
+[project.urls]
+
+bugs = "https://github.com/javipalanca/spade_mcp/issues"
+changelog = "https://github.com/javipalanca/spade_mcp/blob/master/changelog.md"
+homepage = "https://github.com/javipalanca/spade_mcp"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+"*" = ["*.*"]
+
+
+
+
+# Mypy
+# ----
+
+[tool.mypy]
+files = "."
+
+# Use strict defaults
+strict = true
+warn_unreachable = true
+warn_no_return = true
+
+[[tool.mypy.overrides]]
+# Don't require test functions to include types
+module = "tests.*"
+allow_untyped_defs = true
+disable_error_code = "attr-defined"
+
